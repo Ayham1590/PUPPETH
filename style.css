@@ -1,0 +1,738 @@
+/* Reset */
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('Daft-Brush.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MyCustomFont';
+    /* Replace with custom font */
+    background-color: #f7ff5c;
+    /* Background color */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+}
+
+.navbar-wrapper {
+    margin-top: 30px;
+    /* Add space at the top */
+    padding: 10px;
+    border: 4px solid black;
+    /* Black border around the navbar */
+    background-color: white;
+    width: 80%;
+    /* Adjust width for centered effect, not full width */
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    /* Optional shadow for effect */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo img {
+    height: 60px;
+    /* Adjust as needed */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    /* This makes the nav items horizontal */
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    font-size: 25px;
+    /* This ensures the items are vertically aligned in the navbar */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.buy-now-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buy-now-btn {
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'MyCustomFont';
+}
+
+.buy-now-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none;
+    /* Hide the burger by default */
+    cursor: pointer;
+    width: 30px;
+    /* Adjust the size of the burger menu */
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+    /* Control the right spacing */
+}
+
+.menu-toggle .burger {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: 0.3s ease;
+}
+
+.menu-toggle .burger::before,
+.menu-toggle .burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: 0.3s ease;
+}
+
+.menu-toggle .burger::before {
+    transform: translateY(-8px);
+}
+
+.menu-toggle .burger::after {
+    transform: translateY(8px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b3e5fc;
+    /* Light blue background */
+}
+
+.mobile-menu-overlay.active {
+    display: flex;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mobile-nav-links li {
+    margin: 20px 0;
+}
+
+.mobile-nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.buy-now-btn-mobile {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-family: 'MyCustomFont';
+
+}
+
+.buy-now-btn-mobile:hover {
+    background-color: white;
+    color: black;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    cursor: pointer;
+    color: black;
+}
+
+/* Responsive Navbar for smaller screens */
+@media screen and (max-width: 768px) {
+
+    .nav-links,
+    .buy-now-btn-container {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+        /* Make the logo smaller for mobile */
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    width: 80%;
+    /* Same width as the navbar */
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    height: 40rem
+}
+
+.hero-box {
+    width: 100%;
+    border-radius: 10px;
+    /* Black border */
+    height: 400px;
+    /* Adjust height as needed */
+    background-image: url('hero.png');
+    /* Replace with your background image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+/* Buttons Section */
+.buttons-section {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    flex: 1;
+    /* Make buttons take equal width */
+    margin: 0 10px;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #f7ff5c;
+    color: black;
+    font-family: 'MyCustomFont';
+    border: 4px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.hero-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* CA Box */
+.ca-box {
+    width: 50%;
+    padding: 10px;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: #f7ff5c;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Description Text */
+.description-text {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 900px;
+    color: black;
+    margin-bottom: 60px;
+}
+
+/* Responsive for Mobile Screens */
+@media screen and (max-width: 768px) {
+
+
+    .hero-section {
+        margin: 0;
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .hero-box {
+        height: 130px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        /* Adjusted for mobile */
+    }
+
+    .buttons-section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin-bottom: 0;
+        /* 2x2 button grid */
+        /* Removed any gaps */
+    }
+
+    .hero-button {
+        padding: 10px;
+        font-size: 1.0rem;
+        margin-bottom: 10px;
+    }
+
+    .ca-box {
+        font-size: 0.8rem;
+        padding: 8px;
+        width: 92%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .description-text {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+
+/* About Section */
+.about-section {
+    background-color: #fbfbeb;
+    /* White background */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    height: 600px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.about-image img {
+    width: 450px;
+    /* Adjust as needed */
+    height: auto;
+    border-radius: 10px;
+    /* Optional for rounded corners */
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 7rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.about-btn {
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'MyCustomFont';
+}
+
+.about-btn:hover {
+    background-color: #f7ff5c;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .about-section {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 90%;
+        /* Image takes full width on mobile */
+        max-width: 300px;
+        /* Max size */
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 3rem;
+    }
+
+    .about-text p {
+        font-size: 1.3rem;
+    }
+}
+
+/* How to Buy Section */
+.how-to-buy-section {
+    background-color: #c1f3ff;
+    /* White background */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    height: 850px;
+
+}
+
+.how-to-buy-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 80%;
+}
+
+.how-to-buy-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.how-to-buy-text h2 {
+    font-size: 8rem;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* Styling for step title */
+.step-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Styling for step description */
+.step-description {
+    font-size: 1.2rem;
+    color: black;
+    margin-top: px;
+}
+
+/* How to Buy Image */
+.how-to-buy-image img {
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .how-to-buy-section {
+        height: auto;
+    }
+
+    .how-to-buy-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .how-to-buy-text h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .how-to-buy-text {
+        max-width: 100%;
+    }
+
+    .how-to-buy-image img {
+        max-width: 80%;
+        /* Full width on mobile */
+        margin-top: 20px;
+    }
+
+    .steps {
+        gap: 15px;
+    }
+
+    .circle {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+
+    .how-to-buy-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Memes Section */
+.memes-section {
+    background-color: #fbfbeb;
+    /* Light background */
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Heading */
+.memes-section h2 {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    font-family: 'MyCustomFont';
+    /* Optional: custom font */
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    /* Adjust width of the carousel */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Hide overflowing images */
+    /* Optional shadow */
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* Smooth slide effect */
+    gap: 10px;
+    /* Add gap between images */
+    padding: 10px;
+}
+
+/* Carousel Item */
+.carousel-item {
+    min-width: calc(33.3333% - 10px);
+    /* 3 items at a time with gap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Carousel Item Image */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: calc(50% - 10px);
+        /* Show 2 images at a time on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 100%;
+        /* Show 1 image at a time on very small screens */
+    }
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'MyCustomFont';
+    /* Replace with your custom font */
+    width: 100vw;
+    /* Make the footer take full viewport width */
+    margin: 0;
+    /* Remove any margins */
+    position: relative;
+    /* Ensure footer is positioned relative */
+}
+
+/* Footer Content */
+.footer-content {
+    max-width: 1200px;
+    /* Limit the content width */
+    width: 80%;
+    /* Adjust the width for internal content */
+    margin: 0 auto;
+    /* Center the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Footer Logo */
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    /* Adjust size */
+    height: auto;
+}
+
+/* Footer Text */
+.footer-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #e2e2e2;
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-text p {
+        font-size: 0.9rem;
+    }
+
+    .footer-logo-img {
+        width: 100px;
+        /* Make the logo smaller on mobile */
+    }
+}
