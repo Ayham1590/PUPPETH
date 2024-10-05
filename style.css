@@ -451,6 +451,11 @@ body {
     .about-text p {
         font-size: 1.3rem;
     }
+
+    .about-btn {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
 /* How to Buy Section */
